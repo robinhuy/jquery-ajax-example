@@ -20,7 +20,7 @@ npm install -g json-server
 - Bước 3: Clone project về, cd vào trong thư mục project và chạy lệnh
 
 ```
-json-server --watch db.json
+npm start
 ```
 
 Sau đó bật trình duyệt lên và truy cập ứng dụng tại địa chỉ: [http://localhost:3000](http://localhost:3000)

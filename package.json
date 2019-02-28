@@ -1,0 +1,23 @@
+{
+  "name": "jquery-ajax-example",
+  "version": "1.0.0",
+  "description": "Source code ví dụ mẫu quản lý học viên sử dụng jQuery Ajax",
+  "scripts": {
+    "start": "json-server --watch database.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinhuy/jquery-ajax-example.git"
+  },
+  "keywords": [
+    "jquery",
+    "ajax",
+    "bootstrap"
+  ],
+  "author": "Robin Huy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinhuy/jquery-ajax-example/issues"
+  },
+  "homepage": "https://github.com/robinhuy/jquery-ajax-example#readme"
+}
