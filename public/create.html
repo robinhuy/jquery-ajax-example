@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới học viên</title>
+</head>
+
+<body>
+    <h1>Thêm mới học viên</h1>
+
+    <div id="form"></div>
+
+    <br />
+
+    <button onclick="window.location.href='http://localhost:3000'">Quay lại</button>
+    <button onclick="createUser()">Lưu</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src='api.js'></script>
+
+    <script>
+        $(function () {
+            getFormAPI(function (form) {
+                $('#form').html(form)
+            })
+        })
+
+        function createUser() {
+            if (isValidData()) {
+                const user = {
+                    name: $('#name').val(),
+                    birthYear: $('#birthYear').val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val()
+                }
+
+                createUserAPI(user, 'http://localhost:3000');
+            }
+        }
+    </script>
+</body>
+
+</html>

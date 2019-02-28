@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách học viên</title>
+</head>
+
+<body>
+    <h1>Danh sách học viên</h1>
+
+    <a href="/create.html">Thêm học viên</a> <br/><br/>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Họ tên</th>
+                <th>Năm sinh</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src='api.js'></script>
+
+    <script>
+        $(function () {
+            getUsersAPI(renderContent);
+        })
+
+        function renderContent(users) {
+            let htmlContent = '';
+
+            for (let i = 0; i < users.length; i++) {
+                htmlContent += '<tr>';
+                htmlContent += '<td>' + users[i].name + '</td>';
+                htmlContent += '<td>' + users[i].birthYear + '</td>';
+                htmlContent += '<td>' + users[i].email + '</td>';
+                htmlContent += '<td>' + users[i].phone + '</td>';
+                htmlContent += '<td>' +
+                    '<a href="/edit.html?id=' + users[i].id + '">Chỉnh sửa</a> | ' +
+                    '<a href="javascript:void(0)" onclick="deleteUser(' + users[i].id + ', this)">Xóa</a>' +
+                    '</td>';
+                htmlContent += '</tr>';
+            }
+
+            $('table tbody').html(htmlContent);
+        }
+
+        function deleteUser(id, aElement) {
+            const result = confirm('Bạn có chắc chắn muốn xóa học viên này?');
+            if (result) {
+                deleteUserAPI(id, function () {
+                    const tdElement = $(aElement).parent();
+                    const trElement = tdElement.parent();
+                    trElement.remove();
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

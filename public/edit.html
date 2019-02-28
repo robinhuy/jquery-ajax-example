@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cập nhật thông tin học viên</title>
+</head>
+
+<body>
+    <h1>Cập nhật thông tin học viên</h1>
+
+    <div id="form"></div>
+
+    <br />
+
+    <button onclick="window.location.href='http://localhost:3000'">Quay lại</button>
+    <button id="btn-save" onclick="updateUser()">Lưu</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src='api.js'></script>
+
+    <script>
+        const userId = getIdQueryParam();
+
+        $(function () {
+            renderContent()
+        })
+
+        function getIdQueryParam() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        function renderContent() {
+            getUserByIdAPI(userId, function (user) {
+                if (user) {
+                    getFormAPI(function (form) {
+                        $('#form').html(form);
+                        $('#name').val(user.name);
+                        $('#birthYear').val(user.birthYear);
+                        $('#email').val(user.email);
+                        $('#phone').val(user.phone);
+                    })
+                } else {
+                    $('#form').html('Học viên không tồn tại!');
+                    $('#btn-save').hide();
+                }
+            })
+        }
+
+        function updateUser() {
+            if (isValidData()) {
+                const userInfo = {
+                    name: $('#name').val(),
+                    birthYear: $('#birthYear').val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val()
+                }
+
+                updateUserAPI(userId, userInfo, 'http://localhost:3000');
+            }
+        }
+    </script>
+</body>
+
+</html>
