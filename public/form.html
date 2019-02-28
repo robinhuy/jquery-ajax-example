@@ -52,7 +52,7 @@
             $('#name-error').text('Họ tên không được để trống');
         }
 
-        const birthYearRegex = /\d{4}/;
+        const birthYearRegex = /^\d{4}$/;
         const birthYear = $('#birthYear').val();
         if (birthYear !== '' && birthYearRegex.test(birthYear) === false) {
             isValid = false;
