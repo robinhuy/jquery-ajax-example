@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "name": "Robin Huy",
+      "birthYear": "1990",
+      "email": "robin@github.com",
+      "phone": "123456789",
+      "id": 1
+    }
+  ]
+}
