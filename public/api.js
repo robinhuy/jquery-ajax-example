@@ -1,5 +1,4 @@
-const DOMAIN = 'http://localhost:3000'
-const API_ROOT = DOMAIN + '/users'
+const API_ROOT = '/users'
 
 function getUsersAPI(renderFunction) {
     $.ajax({
@@ -53,7 +52,7 @@ function deleteUserAPI(id, renderFunction) {
 function getFormAPI(renderFunction) {
     $.ajax({
         method: 'GET',
-        url: DOMAIN + '/form.html',
+        url: '/form.html',
     }).done(function (html) {
         if (renderFunction) renderFunction(html)
     })
