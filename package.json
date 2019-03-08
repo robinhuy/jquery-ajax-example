@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Source code ví dụ mẫu quản lý học viên sử dụng jQuery Ajax",
   "scripts": {
-    "heroku-prebuild": "npm install -g json-server",
+    "build": "npm install -g json-server",
     "start": "json-server --watch database.json"
   },
   "repository": {
