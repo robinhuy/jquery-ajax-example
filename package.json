@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Source code ví dụ mẫu quản lý học viên sử dụng jQuery Ajax",
   "scripts": {
-    "start": "json-server --watch database.json"
+    "start": "json-server --watch database.json",
+    "build": "npm install -g json-server"
   },
   "repository": {
     "type": "git",
