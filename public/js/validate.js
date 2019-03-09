@@ -1,29 +1,38 @@
 function isValidData() {
     let isValid = true;
-    $('.error').text('');
+    
+    const openDiv = '<div id="name-error" class="error text-danger font-weight-light font-italic mt-1">';
+    const closeDiv = '</div>';
 
-    if ($('#name').val() === '') {
+    $('.error').remove();
+
+    const nameElement = $('#name')
+    if (nameElement.val() === '') {
         isValid = false;
-        $('#name-error').text('Họ tên không được để trống');
+        nameElement.after(openDiv + 'Họ tên không được để trống' + closeDiv)
     }
 
+    const birthYearElement = $('#birthYear');
+    const birthYear = birthYearElement.val();
     const birthYearRegex = /^\d{4}$/;
-    const birthYear = $('#birthYear').val();
+    
     if (birthYear !== '' && birthYearRegex.test(birthYear) === false) {
         isValid = false;
-        $('#birthYear-error').text('Năm sinh không đúng định dạng');
+        birthYearElement.after(openDiv + 'Năm sinh không đúng định dạng' + closeDiv)
     }
 
+    const emailElement = $('#email');
     const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    const email = $('#email').val();
-    if (emailRegex.test(email) === false) {
+    
+    if (emailRegex.test(emailElement.val()) === false) {
         isValid = false;
-        $('#email-error').text('Email không đúng định dạng');
+        emailElement.after(openDiv + 'Email không đúng định dạng' + closeDiv)
     }
 
-    if ($('#phone').val() === '') {
+    const phoneElement = $('#phone');
+    if (phoneElement.val() === '') {
         isValid = false;
-        $('#phone-error').text('Số điện thoại không được để trống');
+        phoneElement.after(openDiv + 'Số điện thoại không được để trống' + closeDiv)
     }
 
     return isValid;
