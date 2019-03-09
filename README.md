@@ -1,6 +1,8 @@
 # jQuery AJAX Example
 
-Source code ví dụ mẫu Quản lý học viên sử dụng jQuery AJAX
+Source code ví dụ mẫu Quản lý học viên sử dụng jQuery AJAX. 
+
+Live demo: [https://quan-ly-hoc-vien.herokuapp.com/](https://quan-ly-hoc-vien.herokuapp.com)
 
 ---
 
@@ -11,13 +13,13 @@ Trong project có sử dụng những công nghệ (thư viện) sau:
 
 ### Cách chạy
 - Bước 1: Cài đặt [NodeJS](https://nodejs.org/en/)
-- Bước 2: Cài đặt JSON Server
+- Bước 2: Cài đặt dependencies: Clone project về, cd vào trong thư mục project và chạy lệnh
 
 ```
-npm install -g json-server
+npm install
 ```
 
-- Bước 3: Clone project về, cd vào trong thư mục project và chạy lệnh
+- Bước 3: Bật server
 
 ```
 npm start
