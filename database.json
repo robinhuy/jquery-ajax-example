@@ -1,11 +1,25 @@
 {
   "users": [
     {
-      "name": "Robin Huy",
-      "birthYear": "1990",
-      "email": "robin@github.com",
-      "phone": "123456789",
+      "name": "Winnifred Tribe",
+      "birthYear": "2000",
+      "email": "wtribe0@kickstarter.com",
+      "phone": "867-130-6017",
       "id": 1
+    },
+    {
+      "name": "Jodie Nicklin",
+      "birthYear": "2005",
+      "email": "jnicklin1@hao123.com",
+      "phone": "472-237-6018",
+      "id": 2
+    },
+    {
+      "name": "Fernanda Howton",
+      "birthYear": "2001",
+      "email": "fhowton2@ebay.co.uk",
+      "phone": "172-134-4609",
+      "id": 3
     }
   ]
 }
