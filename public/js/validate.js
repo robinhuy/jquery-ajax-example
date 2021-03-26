@@ -12,15 +12,6 @@ function isValidData() {
         nameElement.after(openDiv + 'Họ tên không được để trống' + closeDiv)
     }
 
-    const birthYearElement = $('#birthYear');
-    const birthYear = birthYearElement.val();
-    const birthYearRegex = /^\d{4}$/;
-    
-    if (birthYear !== '' && birthYearRegex.test(birthYear) === false) {
-        isValid = false;
-        birthYearElement.after(openDiv + 'Năm sinh không đúng định dạng' + closeDiv)
-    }
-
     const emailElement = $('#email');
     const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     

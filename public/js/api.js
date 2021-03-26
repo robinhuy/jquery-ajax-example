@@ -1,59 +1,93 @@
-const API_ROOT = '/users'
+const API_ROOT = "/users";
 
-function getUsersAPI(renderFunction) {
-    $.ajax({
-        method: 'GET',
-        url: API_ROOT,
-    }).done(function (users) {
-        if (renderFunction) renderFunction(users)
-    })
+function getUsersAsync() {
+  return $.ajax({
+    method: "GET",
+    url: API_ROOT + "?_sort=id&_order=desc",
+  });
 }
 
-function getUserByIdAPI(id, renderFunction) {
-    $.ajax({
-        method: 'GET',
-        url: API_ROOT + '/' + id,
-    }).done(function (user) {
-        renderFunction(user)
-    }).catch(function () {
-        renderFunction(null)
-    })
+function getUserByIdAsync(id) {
+  return $.ajax({
+    method: "GET",
+    url: API_ROOT + "/" + id,
+  });
 }
 
-function createUserAPI(user, redirectLink) {
-    $.ajax({
-        method: 'POST',
-        url: API_ROOT,
-        data: user
-    }).done(function () {
-        if (redirectLink) window.location.href = redirectLink
-    })
+function createUserAsync(user) {
+  return $.ajax({
+    method: "POST",
+    url: API_ROOT,
+    data: user,
+  });
 }
 
-function updateUserAPI(userId, userInfo, redirectLink) {
-    $.ajax({
-        method: 'PUT',
-        url: API_ROOT + '/' + userId,
-        data: userInfo
-    }).done(function () {
-        if (redirectLink) window.location.href = redirectLink
-    })
+function updateUserAsync(user) {
+  return $.ajax({
+    method: "PUT",
+    url: API_ROOT + "/" + user.id,
+    data: user,
+  });
 }
 
-function deleteUserAPI(id, renderFunction) {
-    $.ajax({
-        method: 'DELETE',
-        url: API_ROOT + '/' + id
-    }).done(function () {
-        if (renderFunction) renderFunction()
-    })
+function deleteUserAsync(id) {
+  return $.ajax({
+    method: "DELETE",
+    url: API_ROOT + "/" + id,
+  });
 }
 
-function getFormAPI(renderFunction) {
-    $.ajax({
-        method: 'GET',
-        url: '/form.html',
-    }).done(function (html) {
-        if (renderFunction) renderFunction(html)
+function getUsersWithCallback(renderFunction) {
+  $.ajax({
+    method: "GET",
+    url: API_ROOT + "?_sort=id&_order=desc",
+  })
+    .done(function (users) {
+      renderFunction(users);
     })
+    .catch(function () {
+      renderFunction([]);
+    });
+}
+
+function getUserByIdWithCallback(id, renderFunction) {
+  $.ajax({
+    method: "GET",
+    url: API_ROOT + "/" + id,
+  })
+    .done(function (user) {
+      renderFunction(user);
+    })
+    .catch(function () {
+      renderFunction({});
+    });
+}
+
+function createUserWithCallback(user, callback) {
+  $.ajax({
+    method: "POST",
+    url: API_ROOT,
+    data: user,
+  }).done(function () {
+    callback();
+  });
+}
+
+function updateUserWithCallback(user, callback) {
+  $.ajax({
+    method: "PUT",
+    url: API_ROOT + "/" + user.id,
+    data: userInfo,
+  }).done(function () {
+    callback();
+  });
+}
+
+function deleteUserWithCallback(id, callback) {
+  $.ajax({
+    method: "DELETE",
+    url: API_ROOT + "/" + id,
+  }).done(function () {
+    callback();
+  });
 }

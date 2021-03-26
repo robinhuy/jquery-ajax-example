@@ -1,93 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
 
     <title>Thêm mới học viên</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1 class="text-center mt-4">Thêm mới học viên</h1>
+      <h1 class="text-center mt-4">Thêm mới học viên</h1>
 
-        <br />
+      <br />
 
-        <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Họ tên <span class="text-danger">*</span></label>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label"
+          >Họ tên <span class="text-danger">*</span></label
+        >
 
-            <div class="col-sm-10">
-                <input type="text" id="name" class="form-control">
-            </div>
+        <div class="col-sm-10">
+          <input type="text" id="name" class="form-control" />
         </div>
+      </div>
 
-        <div class="form-group row">
-            <label for="birthYear" class="col-sm-2 col-form-label">Năm sinh</label>
+      <div class="form-group row">
+        <label for="birthday" class="col-sm-2 col-form-label">Ngày sinh</label>
 
-            <div class="col-sm-10">
-                <input type="text" id="birthYear" class="form-control">
-            </div>
+        <div class="col-sm-10">
+          <input type="text" id="birthday" class="form-control" />
         </div>
+      </div>
 
-        <div class="form-group row">
-            <label for="email" class="col-sm-2 col-form-label">Email <span class="text-danger">*</span></label>
+      <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label"
+          >Email <span class="text-danger">*</span></label
+        >
 
-            <div class="col-sm-10">
-                <input type="text" id="email" class="form-control">
-            </div>
+        <div class="col-sm-10">
+          <input type="text" id="email" class="form-control" />
         </div>
+      </div>
 
-        <div class="form-group row">
-            <label for="phone" class="col-sm-2 col-form-label">Phone <span class="text-danger">*</span></label>
+      <div class="form-group row">
+        <label for="phone" class="col-sm-2 col-form-label"
+          >Phone <span class="text-danger">*</span></label
+        >
 
-            <div class="col-sm-10">
-                <input type="text" id="phone" class="form-control">
-            </div>
+        <div class="col-sm-10">
+          <input type="text" id="phone" class="form-control" />
         </div>
+      </div>
 
-        <br />
+      <br />
 
-        <div class="text-center">
-            <button class="btn btn-secondary" onclick="window.location.href='/'">
-                <i class="fa fa-chevron-left"></i> Quay lại
-            </button>
+      <div class="text-center">
+        <button class="btn btn-secondary" onclick="window.location.href='/'">
+          <i class="fa fa-chevron-left"></i> Quay lại
+        </button>
 
-            <button class="btn btn-success" onclick="createUser()">
-                <i class="fa fa-save"></i> Lưu
-            </button>
-        </div>
+        <button class="btn btn-success" onclick="createUser()">
+          <i class="fa fa-save"></i> Lưu
+        </button>
+      </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src='/js/api.js'></script>
-    <script src='/js/validate.js'></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/validate.js"></script>
 
     <script>
-        function createUser() {
-            if (isValidData()) {
-                const user = {
-                    name: $('#name').val(),
-                    birthYear: $('#birthYear').val(),
-                    email: $('#email').val(),
-                    phone: $('#phone').val()
-                }
+      async function createUser() {
+        if (isValidData()) {
+          const user = {
+            name: $("#name").val(),
+            birthday: $("#birthday").val(),
+            email: $("#email").val(),
+            phone: $("#phone").val(),
+          };
 
-                createUserAPI(user, '/');
-            }
+          //   createUserWithCallback(user, function () {
+          //     window.location.href = "/";
+          //   });
+
+          await createUserAsync(user);
+          window.location.href = "/";
         }
+      }
     </script>
-</body>
-
+  </body>
 </html>
